@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Carlos Silva",
+    "duration": "12 semanas",
+    "goal": "Perdeu 13kg",
+    "beforeImage": "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=400&q=80",
+    "afterImage": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80"
+  },
+  {
+    "name": "Ana Paula",
+    "duration": "16 semanas",
+    "goal": "Ganhou 5kg de músculo",
+    "beforeImage": "https://images.unsplash.com/photo-1594381898411-846e7d193883?w=400&q=80",
+    "afterImage": "https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=400&q=80"
+  },
+  {
+    "name": "Rafael Costa",
+    "duration": "20 semanas",
+    "goal": "Transformação completa",
+    "beforeImage": "https://images.unsplash.com/photo-1532029837206-abbe2b7620e3?w=400&q=80",
+    "afterImage": "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?w=400&q=80"
+  }
+]

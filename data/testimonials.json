@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Alex Oliveira",
+    "role": "Desenvolvedor",
+    "rating": 5,
+    "text": "Melhor investimento que já fiz. Eliminei 11kg e me sinto mais forte do que nunca. Os check-ins semanais me mantêm focado.",
+    "featured": false
+  },
+  {
+    "name": "Mariana Santos",
+    "role": "Diretora de Marketing",
+    "rating": 5,
+    "text": "Finalmente um programa que se encaixa na minha rotina corrida. Sem enrolação, só resultados. Meus níveis de energia estão nas alturas.",
+    "featured": false
+  },
+  {
+    "name": "Lucas Ferreira",
+    "role": "Empreendedor",
+    "rating": 5,
+    "text": "Ganhei 7kg de músculo em 4 meses. O plano nutricional mudou tudo. Vale cada centavo.",
+    "featured": false
+  },
+  {
+    "name": "Juliana Costa",
+    "role": "Professora",
+    "rating": 5,
+    "text": "Já tentei de tudo e este é o único programa que funcionou. A personalização faz toda a diferença. Não poderia estar mais feliz!",
+    "featured": true
+  }
+]
