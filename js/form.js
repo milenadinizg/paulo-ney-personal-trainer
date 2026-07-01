@@ -18,12 +18,18 @@ function setupLeadForm() {
       email: form.email.value.trim(),
       whatsapp: form.whatsapp.value.trim(),
       goal: form.goal.value,
+      sub: form.sub.checked,
     };
 
     setSubmittingState(true, submitBtn, submitText, submitIcon);
 
     try {
       await Api.postLead(formData);
+      
+      if(formData.sub) {
+        await Api.subscribeToNewsletter(formData.email, formData.name);
+      }
+
     } catch (err) {
       console.warn("Aviso: lead não salvo no banco:", err.message);
     }

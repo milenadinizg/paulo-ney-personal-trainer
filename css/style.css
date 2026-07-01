@@ -26,6 +26,22 @@ a {
   text-decoration: none;
 }
 
+form-check {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+form-check-input {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 0.25rem;
+  border: 1px solid rgba(255,255,255,0.2);
+  background-color: var(--color-bg-0);
+  transition: all 0.2s ease;
+}
+
 .section-padding {
   padding-top: 8rem;
   padding-bottom: 8rem;
@@ -109,7 +125,7 @@ a {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  min-height: 64px;
+  height: 64px;
   transition: background-color 0.3s ease;
 }
 
@@ -265,7 +281,7 @@ a {
 .process-number {
   font-family: var(--font-display);
   font-size: 3.5rem;
-  color: var(--color-neon);
+  color: rgba(var(--color-neon-rgb), 0.5);
   margin-bottom: 0.5rem;
 }
 
@@ -860,31 +876,6 @@ a {
 }
 
 /* RESPONSIVIDADE */
-
-@media (max-width: 991.98px) {
-  .custom-navbar .navbar-collapse {
-    background-color: #0a0a0a;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 0.75rem;
-    margin-top: 0.75rem;
-    margin-bottom: 0.75rem;
-    padding: 1.5rem 1rem;
-    max-height: calc(100vh - 96px);
-    overflow-y: auto;
-  }
-
-  .custom-navbar .navbar-nav {
-    gap: 1rem;
-  }
-
-  .custom-navbar .navbar-nav .nav-link {
-    padding: 0.4rem 0;
-  }
-
-  .custom-navbar .btn-neon {
-    width: 100%;
-  }
-}
 
 @media (max-width: 767.98px) {
   .section-padding {

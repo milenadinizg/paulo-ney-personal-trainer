@@ -1,0 +1,19 @@
+# Dependências do Node.js
+node_modules/
+
+# Banco de dados SQLite (gerado automaticamente pelo seed)
+server/fitcoach.db
+server/fitcoach.db-shm
+server/fitcoach.db-wal
+
+# Variáveis de ambiente (se você criar um .env futuramente)
+.env
+.env.local
+
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*

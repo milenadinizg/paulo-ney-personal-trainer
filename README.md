@@ -18,24 +18,24 @@ Site de consultoria online de personal trainer com backend Node.js e banco de da
 ## Estrutura do Projeto
 
 ```
-paulo-ney/
-├── index.html          ← Página principal do site
+fitcoach/
+├── index.html              ← Página principal do site
 ├── css/
-│   └── style.css       ← Estilos customizados
+│   └── style.css           ← Estilos customizados
 ├── js/
-│   ├── api.js           ← Comunicação com a API REST
-│   ├── data.js           ← Dados estáticos (textos, preços, FAQ)
-│   ├── render.js         ← Injeta conteúdo dinâmico no DOM
-│   ├── ui.js              ← Interações (navbar, FAQ, scroll reveal)
-│   └── form.js            ← Formulários (lead, avaliação, depoimento)
+│   ├── api.js              ← Comunicação com a API REST
+│   ├── data.js             ← Dados estáticos (textos, preços, FAQ)
+│   ├── render.js           ← Injeta conteúdo no DOM
+│   ├── ui.js               ← Interações (navbar, FAQ, scroll)
+│   └── form.js             ← Formulários (lead, avaliação, depoimento)
 ├── server/
-│   ├── index.js           ← Servidor Express + rotas da API
-│   ├── database.js        ← Configuração do SQLite (cria tabelas)
+│   ├── index.js            ← Servidor Express + rotas da API
+│   ├── database.js         ← Configuração do SQLite (cria tabelas)
 │   ├── seed.js             ← Popula o banco com dados iniciais
-│   ├── img/                 ← Fotos do trainer e resultados (antes/depois)
 │   └── fitcoach.db         ← Banco gerado automaticamente (não versionar)
-├── data/                ← Legado — JSON usado antes de existir o backend; não é mais lido por nenhum código
+├── data/                   ← (legado — não mais utilizado)
 ├── package.json
+├── .gitignore
 └── README.md
 ```
 
@@ -63,8 +63,8 @@ git --version    # deve mostrar git version 2.x.x
 ### Passo 1 — Clonar o repositório
 
 ```bash
-git clone https://github.com/SEU_USUARIO/paulo-ney.git
-cd paulo-ney
+git clone https://github.com/SEU_USUARIO/fitcoach.git
+cd fitcoach
 ```
 
 ### Passo 2 — Instalar as dependências
@@ -97,8 +97,6 @@ Você verá a saída:
  Seed concluído! Banco de dados pronto.
 ```
 
-O `seed.js` verifica se já existem dados antes de inserir, então rodar `npm run seed` de novo não duplica registros.
-
 ### Passo 4 — Iniciar o servidor
 
 ```bash
@@ -123,8 +121,8 @@ O servidor expõe os seguintes endpoints:
 
 | Método | Rota | Descrição |
 |--------|------|-----------|
-| `GET` | `/api/testimonials` | Lista os depoimentos aprovados (`approved = 1`), destaque primeiro |
-| `POST` | `/api/testimonials` | Envia um novo depoimento |
+| `GET` | `/api/testimonials` | Lista todos os depoimentos aprovados |
+| `POST` | `/api/testimonials` | Envia um novo depoimento (fica pendente) |
 
 Exemplo de body para POST:
 ```json
@@ -135,20 +133,27 @@ Exemplo de body para POST:
   "text": "Perdi 10kg em 3 meses. Recomendo!"
 }
 ```
+
 ### Avaliações
 
 | Método | Rota | Descrição |
 |--------|------|-----------|
 | `GET` | `/api/reviews` | Lista todas as avaliações aprovadas |
 | `GET` | `/api/reviews?plan=PRO` | Filtra por plano |
-| `POST` | `/api/reviews` | Envia uma nova avaliação (também auto-aprovada, `approved = 1`) |
+| `POST` | `/api/reviews` | Envia uma nova avaliação |
+
+### Leads
+
+| Método | Rota | Descrição |
+|--------|------|-----------|
+| `POST` | `/api/leads` | Salva um lead no banco |
 
 ### Dados do Personal
 
 | Método | Rota | Descrição |
 |--------|------|-----------|
-| `GET` | `/api/trainer` | Dados do personal trainer e suas credenciais |
-| `GET` | `/api/stats` | Estatísticas exibidas no hero (clientes, avaliação média, etc.) |
+| `GET` | `/api/trainer` | Dados do personal trainer |
+| `GET` | `/api/stats` | Estatísticas do hero |
 | `GET` | `/api/results` | Resultados antes/depois |
 
 ---
@@ -157,11 +162,17 @@ Exemplo de body para POST:
 
 O banco `server/fitcoach.db` é criado automaticamente ao iniciar o servidor. As tabelas são:
 
-- **`testimonials`** — depoimentos de clientes
-- **`reviews`** — avaliações com nota e comentário
+- **`testimonials`** — depoimentos de clientes (com aprovação)
+- **`reviews`** — avaliações com nota e comentário (com aprovação)
 - **`leads`** — dados de potenciais clientes captados pelo formulário
 - **`trainer`** — dados do personal trainer
 - **`trainer_credentials`** — badges/credenciais do trainer
 - **`stats`** — estatísticas exibidas no hero
 - **`results`** — resultados de antes/depois
 
+> Depoimentos e avaliações enviados pelo site ficam com `approved = 0` por padrão.
+> Para aprová-los, você pode usar qualquer cliente SQLite (ex.: **DB Browser for SQLite**):
+> ```sql
+> UPDATE testimonials SET approved = 1 WHERE id = 1;
+> UPDATE reviews SET approved = 1 WHERE id = 1;
+> ```

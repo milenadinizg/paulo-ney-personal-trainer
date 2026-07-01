@@ -2,17 +2,20 @@ const painPoints = [
   {
     icon: "bi-exclamation-circle",
     title: "Falta de Responsabilidade",
-    description: "Você começa motivado mas perde o gás em poucas semanas. Ninguém acompanha, ninguém te cobra resultados.",
+    description:
+      "Você começa motivado mas perde o gás em poucas semanas. Ninguém acompanha, ninguém te cobra resultados.",
   },
   {
     icon: "bi-exclamation-circle",
     title: "Programas Genéricos",
-    description: "Treinos prontos da internet que não consideram seu tipo físico, limitações ou objetivos reais.",
+    description:
+      "Treinos prontos da internet que não consideram seu tipo físico, limitações ou objetivos reais.",
   },
   {
     icon: "bi-exclamation-circle",
     title: "Dinheiro Desperdiçado",
-    description: "Pagando mensalidades em academias com equipamentos que você não usa corretamente e sem orientação adequada.",
+    description:
+      "Pagando mensalidades em academias com equipamentos que você não usa corretamente e sem orientação adequada.",
   },
 ];
 
@@ -21,25 +24,29 @@ const processSteps = [
     icon: "bi-clipboard-check",
     number: "01",
     title: "AVALIAÇÃO",
-    description: "Complete um questionário detalhado sobre seu nível de condicionamento, objetivos, lesões e estilo de vida.",
+    description:
+      "Complete um questionário detalhado sobre seu nível de condicionamento, objetivos, lesões e estilo de vida.",
   },
   {
     icon: "bi-bar-chart-steps",
     number: "02",
     title: "PLANO PERSONALIZADO",
-    description: "Receba seu programa de treino personalizado e guia nutricional em até 48 horas.",
+    description:
+      "Receba seu programa de treino personalizado e guia nutricional em até 48 horas.",
   },
   {
     icon: "bi-calendar-check",
     number: "03",
     title: "CHECK-INS SEMANAIS",
-    description: "Acompanhe o progresso com fotos, medidas e desempenho. Receba ajustes em tempo real.",
+    description:
+      "Acompanhe o progresso com fotos, medidas e desempenho. Receba ajustes em tempo real.",
   },
   {
     icon: "bi-trophy",
     number: "04",
     title: "RESULTADOS",
-    description: "Alcance sua transformação em 90 dias e estabeleça hábitos sustentáveis para a vida toda.",
+    description:
+      "Alcance sua transformação em 90 dias e estabeleça hábitos sustentáveis para a vida toda.",
   },
 ];
 
@@ -88,7 +95,6 @@ const pricingPlans = [
   },
 ];
 
-
 const trustBadges = [
   { icon: "bi-shield-check", text: "Garantia de satisfação" },
   { icon: "bi-lock", text: "Pagamento seguro" },
@@ -98,23 +104,28 @@ const trustBadges = [
 const faqData = [
   {
     question: "Preciso de matrícula em academia?",
-    answer: "Não necessariamente. Posso criar programas para treinos em casa com equipamento mínimo ou com acesso completo à academia.",
+    answer:
+      "Não necessariamente. Posso criar programas para treinos em casa com equipamento mínimo ou com acesso completo à academia—o que funcionar melhor para você.",
   },
   {
     question: "Com que frequência nos comunicamos?",
-    answer: "Depende do seu plano. Essencial: inclui check-ins mensais, Pro: inclui check-ins semanais, Elite: inclui chamadas de vídeo quinzenais mais suporte 24/7.",
+    answer:
+      "Depende do seu plano. Essencial inclui check-ins mensais, Pro inclui check-ins semanais, e Elite inclui chamadas de vídeo quinzenais mais suporte 24/7.",
   },
   {
     question: "E se eu tiver lesões ou limitações?",
-    answer: "Já trabalhei com clientes se recuperando de lesões, dor crônica e limitações físicas. Seu programa será totalmente personalizado para contornar suas restrições.",
+    answer:
+      "Já trabalhei com clientes se recuperando de lesões, dor crônica e limitações físicas. Seu programa será totalmente personalizado para contornar suas restrições.",
   },
   {
     question: "Posso cancelar a qualquer momento?",
-    answer: "Há um compromisso mínimo de 90 dias para ver resultados reais. Depois disso, você pode cancelar quando quiser.",
+    answer:
+      "Há um compromisso mínimo de 90 dias para ver resultados reais. Depois disso, você pode cancelar quando quiser com aviso prévio de 30 dias.",
   },
   {
     question: "Você fornece planos alimentares?",
-    answer: "Sim! Todos os planos incluem um guia nutricional personalizado com macros, horários de refeições e recomendações alimentares adaptadas aos seus objetivos e preferências.",
+    answer:
+      "Sim! Todos os planos incluem um guia nutricional personalizado com macros, horários de refeições e recomendações alimentares adaptadas aos seus objetivos e preferências.",
   },
 ];
 

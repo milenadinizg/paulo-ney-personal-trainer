@@ -1,354 +1,545 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Paulo Ney | Consultoria Online de Personal Trainer</title>
-  <meta name="description" content="Treinos personalizados, plano nutricional e acompanhamento semanal. Transforme seu físico em 90 dias com consultoria online.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paulo Ney | Consultoria Online de Personal Trainer</title>
+    <meta
+      name="description"
+      content="Treinos personalizados, plano nutricional e acompanhamento semanal. Transforme seu físico em 90 dias com consultoria online."
+    />
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-  <!-- Bootstrap Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
+    />
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav
+      class="navbar navbar-expand-lg fixed-top custom-navbar"
+      id="mainNavbar"
+    >
+      <div class="container-fluid px-4 px-lg-5">
+        <a class="navbar-brand logo-text" href="#hero">PAULO NEY</a>
 
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg fixed-top custom-navbar" id="mainNavbar">
-    <div class="container-fluid px-4 px-lg-5">
-      <a class="navbar-brand logo-text" href="#hero">PAULO NEY</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navMenu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navMenu">
-        <ul class="navbar-nav mx-auto gap-lg-4 text-center">
-          <li class="nav-item"><a class="nav-link nav-section-link" href="#hero">Início</a></li>
-          <li class="nav-item"><a class="nav-link nav-section-link" href="#how-it-works">Como Funciona</a></li>
-          <li class="nav-item"><a class="nav-link nav-section-link" href="#results">Resultados</a></li>
-          <li class="nav-item"><a class="nav-link nav-section-link" href="#pricing">Planos</a></li>
-          <li class="nav-item"><a class="nav-link nav-section-link" href="#community-feedback">Depoimentos</a></li>
-        </ul>
-        <a href="#submit-forms" class="btn btn-neon mt-3 mt-lg-0">COMEÇAR AGORA →</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- HERO -->
-  <section id="hero" class="hero-section d-flex align-items-center justify-content-center">
-    <div class="hero-overlay"></div>
-    <div class="noise-overlay"></div>
-
-    <div class="container position-relative text-center py-5" style="z-index: 2;">
-      <h1 class="display-hero mb-4">
-        SEU MELHOR FÍSICO.<br>
-        CONSTRUÍDO ONLINE.<br>
-        <span class="text-neon">90 DIAS.</span>
-      </h1>
-
-      <p class="lead-text mx-auto mb-5" style="max-width: 640px;">
-        Transforme seu corpo com treinos personalizados, planos nutricionais e acompanhamento semanal—tudo de qualquer lugar do mundo.
-      </p>
-
-      <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center mb-5">
-        <a href="#submit-forms" class="btn btn-neon btn-lg px-5">COMEÇAR AGORA</a>
-        <a href="#how-it-works" class="btn btn-outline-neon btn-lg px-5">COMO FUNCIONA</a>
-      </div>
-
-      <!-- Stats dinâmicas via API -->
-      <div id="stats-container" class="row justify-content-center g-4"></div>
-    </div>
-  </section>
-
-  <!-- PAIN POINTS -->
-  <section class="section-padding bg-dark-2 position-relative">
-    <div class="noise-overlay"></div>
-    <div class="container position-relative">
-      <p class="text-center label-neon mb-5">ISSO PARECE FAMILIAR?</p>
-      <div id="painpoints-container" class="row g-4"></div>
-    </div>
-  </section>
-
-  <!-- HOW IT WORKS -->
-  <section id="how-it-works" class="section-padding bg-dark-1 position-relative">
-    <div class="noise-overlay"></div>
-    <div class="container position-relative">
-      <div class="text-center mb-5">
-        <h2 class="display-section mb-3">COMO FUNCIONA</h2>
-        <p class="lead-text mx-auto" style="max-width: 600px;">
-          Um sistema comprovado de 4 etapas para transformar seu físico em 90 dias
-        </p>
-      </div>
-      <div id="process-container" class="row g-5 position-relative"></div>
-    </div>
-  </section>
-
-  <!-- BEFORE & AFTER -->
-  <section id="results" class="section-padding bg-dark-3 position-relative">
-    <div class="noise-overlay"></div>
-    <div class="container position-relative">
-      <div class="text-center mb-5">
-        <h2 class="display-section mb-3">RESULTADOS REAIS</h2>
-        <p class="lead-text mx-auto" style="max-width: 600px;">
-          Mais de 500 clientes transformados. Estas são apenas algumas das histórias.
-        </p>
-      </div>
-      <div id="results-grid" class="row g-4"></div>
-    </div>
-  </section>
-
-  <!-- FEEDBACK -->
-  <section id="community-feedback" class="section-padding bg-dark-1 position-relative">
-    <div class="noise-overlay"></div>
-    <div class="container position-relative">
-
-      <div class="text-center mb-5">
-        <p class="label-neon mb-2">O QUE DIZEM OS ALUNOS</p>
-        <h2 class="display-section mb-3">DEPOIMENTOS</h2>
-        <p class="lead-text">Resultados reais de quem viveu a transformação</p>
-      </div>
-
-      <div class="row g-0">
-
-        <!-- COLUNA DE DEPOIMENTOS -->
-        <div class="col-12 col-lg-10 mx-auto">
-          <div class="feedback-col-header mb-4">
-            <i class="bi bi-chat-quote-fill text-neon me-2"></i>
-            <span class="label-neon">DEPOIMENTOS</span>
-          </div>
-          <!-- Grid desktop -->
-          <div id="testimonials-grid" class="d-flex flex-column gap-3 d-none d-md-flex"></div>
-          <!-- Carrossel mobile -->
-          <div id="testimonials-mobile" class="d-md-none"></div>
-          <!-- Depoimento em destaque -->
-          <div id="testimonial-featured"></div>
-          <!-- Empty state -->
-          <div id="testimonials-empty" class="text-gray-400 text-center py-4" style="display:none;">Nenhum depoimento ainda. Seja o primeiro!</div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- TRAINER INFO -->
-  <section class="section-padding bg-dark-2 position-relative">
-    <div class="noise-overlay"></div>
-    <div class="container position-relative">
-      <div class="row g-5 align-items-center">
-        <div class="col-12 col-md-6 order-2 order-md-1">
-          <div class="trainer-photo-wrap">
-            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=80" alt="Foto do personal trainer" class="trainer-photo">
-            <div class="trainer-photo-gradient"></div>
-          </div>
-        </div>
-        <div class="col-12 col-md-6 order-1 order-md-2" id="trainer-info">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRICING -->
-  <section id="pricing" class="section-padding bg-dark-1 position-relative">
-    <div class="noise-overlay"></div>
-    <div class="container position-relative">
-      <div class="text-center mb-5">
-        <h2 class="display-section mb-3">ESCOLHA SEU PLANO</h2>
-        <p class="lead-text">Compromisso mínimo de 90 dias. Cancele quando quiser depois.</p>
-      </div>
-
-      <div id="pricing-grid" class="row g-4 mb-5"></div>
-
-      <div id="trust-badges" class="d-flex flex-wrap justify-content-center gap-4 gap-md-5 py-4 border-top border-white border-opacity-10"></div>
-    </div>
-  </section>
-
-  <!-- FORMS -->
-  <section id="submit-forms" class="section-padding bg-dark-1 position-relative">
-    <div class="noise-overlay"></div>
-    <div class="container position-relative">
-      <div class="text-center mb-5">
-        <p class="label-neon mb-2">FAÇA PARTE DA COMUNIDADE</p>
-        <h2 class="display-section mb-3">COMECE SUA TRANSFORMAÇÃO</h2>
-        <p class="lead-text mx-auto" style="max-width: 600px;">Garanta sua vaga na consultoria ou compartilhe seu depoimento com quem já vive a transformação.</p>
-      </div>
-
-      <div class="row g-4 align-items-start">
-
-        <!-- FORMULÁRIO GARANTIR VAGA -->
-        <div class="col-12 col-lg-6">
-          <div class="form-card h-100">
-            <div class="d-flex align-items-center gap-3 mb-4">
-              <div class="forms-icon-wrap">
-                <i class="bi bi-send-fill text-neon"></i>
-              </div>
-              <div>
-                <h3 class="display-subsection mb-1">GARANTA SUA VAGA</h3>
-                <p class="text-gray-400 mb-0" style="font-size:0.875rem;">Comece sua transformação hoje</p>
-              </div>
-            </div>
-
-            <div id="success-message" class="success-box text-center d-none">
-              <div class="success-icon mx-auto mb-3">
-                <i class="bi bi-send-fill"></i>
-              </div>
-              <h3 class="display-subsection mb-2">REDIRECIONANDO PARA O WHATSAPP!</h3>
-              <p class="text-gray-300">Sua mensagem foi formatada e enviada. Aguarde meu retorno em breve!</p>
-            </div>
-
-            <form id="lead-form" novalidate>
-              <div class="mb-3">
-                <label for="inputName" class="form-label">Nome Completo *</label>
-                <input type="text" id="inputName" name="name" class="form-control custom-input" placeholder="João Silva" required>
-              </div>
-
-              <div class="mb-3">
-                <label for="inputEmail" class="form-label">Email *</label>
-                <input type="email" id="inputEmail" name="email" class="form-control custom-input" placeholder="joao@exemplo.com" required>
-              </div>
-
-              <div class="mb-3">
-                <label for="inputWhatsapp" class="form-label">WhatsApp *</label>
-                <input type="tel" id="inputWhatsapp" name="whatsapp" class="form-control custom-input" placeholder="(11) 99999-9999" required>
-              </div>
-
-              <div class="mb-4">
-                <label for="inputGoal" class="form-label">Objetivo Principal *</label>
-                <select id="inputGoal" name="goal" class="form-select custom-input" required>
-                  <option value="" selected disabled>Selecione seu objetivo...</option>
-                  <option value="lose-weight">Perder Peso</option>
-                  <option value="build-muscle">Ganhar Massa Muscular</option>
-                  <option value="get-lean">Definição e Tonificação</option>
-                  <option value="improve-performance">Melhorar Performance Atlética</option>
-                  <option value="general-fitness">Condicionamento Geral</option>
-                </select>
-              </div>
-
-              <button type="submit" id="submitBtn" class="btn btn-neon w-100 d-flex align-items-center justify-content-center gap-2">
-                <span id="submitText">GARANTIR MINHA VAGA</span>
-                <i class="bi bi-send-fill" id="submitIcon"></i>
-              </button>
-
-              <p class="text-center small-note mt-3 mb-0">
-                Ao enviar, você concorda em receber comunicações sobre sua jornada fitness.
-              </p>
-            </form>
-          </div>
-        </div>
-
-        <!-- DIVISOR VERTICAL -->
-        <div class="col-12 d-lg-none">
-          <div class="forms-divider-h"></div>
-        </div>
-        <div class="d-none d-lg-flex col-lg-auto align-self-stretch">
-          <div class="forms-divider-v"></div>
-        </div>
-
-        <!-- FORMULÁRIO DE DEPOIMENTO -->
-        <div class="col-12 col-lg">
-          <div class="form-card h-100">
-            <div class="d-flex align-items-center gap-3 mb-4">
-              <div class="forms-icon-wrap">
-                <i class="bi bi-chat-quote-fill text-neon"></i>
-              </div>
-              <div>
-                <h3 class="display-subsection mb-1">DEPOIMENTO</h3>
-                <p class="text-gray-400 mb-0" style="font-size:0.875rem;">Conte sua história de transformação</p>
-              </div>
-            </div>
-            <form id="testimonial-form" novalidate>
-              <div class="mb-3">
-                <label for="testimonialName" class="form-label">Seu Nome *</label>
-                <input type="text" id="testimonialName" name="testimonialName" class="form-control custom-input" placeholder="Maria Silva" required>
-              </div>
-              <div class="mb-3">
-                <label for="testimonialRole" class="form-label">Profissão / Ocupação *</label>
-                <input type="text" id="testimonialRole" name="testimonialRole" class="form-control custom-input" placeholder="Empresária" required>
-              </div>
-              <div class="mb-3">
-                <label for="testimonialRating" class="form-label">Avaliação *</label>
-                <select id="testimonialRating" name="testimonialRating" class="form-select custom-input" required>
-                  <option value="" disabled selected>Selecione...</option>
-                  <option value="5">⭐⭐⭐⭐⭐ Excelente</option>
-                  <option value="4">⭐⭐⭐⭐ Muito bom</option>
-                  <option value="3">⭐⭐⭐ Bom</option>
-                  <option value="2">⭐⭐ Regular</option>
-                  <option value="1">⭐ Ruim</option>
-                </select>
-              </div>
-              <div class="mb-4">
-                <label for="testimonialText" class="form-label">Seu Depoimento *</label>
-                <textarea id="testimonialText" name="testimonialText" class="form-control custom-input" rows="4" placeholder="Conte sua experiência..." required minlength="20"></textarea>
-              </div>
-              <button type="submit" class="btn btn-outline-neon w-100">ENVIAR DEPOIMENTO</button>
-              <div id="testimonial-feedback" class="form-feedback" style="display:none;"></div>
-            </form>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="section-padding bg-dark-2 position-relative">
-    <div class="noise-overlay"></div>
-    <div class="container position-relative" style="max-width: 800px;">
-      <h2 class="display-section text-center mb-5">PERGUNTAS FREQUENTES</h2>
-      <div id="faq-list" class="d-flex flex-column gap-3"></div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer-section">
-    <div class="container">
-      <div class="row g-5 mb-5">
-        <div class="col-12 col-md-4">
-          <div class="logo-text mb-3">PAULO NEY</div>
-          <p class="text-gray-400 small">Transforme seu corpo. Transforme sua vida.</p>
-        </div>
-
-        <div class="col-12 col-md-4">
-          <h3 class="display-subsection mb-3">LINKS RÁPIDOS</h3>
-          <ul class="list-unstyled footer-links">
-            <li><a href="#hero">Início</a></li>
-            <li><a href="#how-it-works">Como Funciona</a></li>
-            <li><a href="#results">Resultados</a></li>
-            <li><a href="#pricing">Planos</a></li>
-            <li><a href="#community-feedback">Depoimentos</a></li>
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav mx-auto gap-lg-4 text-center">
+            <li class="nav-item">
+              <a class="nav-link nav-section-link" href="#hero">Início</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-section-link" href="#how-it-works"
+                >Como Funciona</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-section-link" href="#results"
+                >Resultados</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-section-link" href="#pricing">Planos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-section-link" href="#community-feedback"
+                >Depoimentos</a
+              >
+            </li>
           </ul>
-        </div> 
+          <a href="#submit-forms" class="btn btn-neon mt-3 mt-lg-0"
+            >COMEÇAR AGORA →</a
+          >
+        </div>
+      </div>
+    </nav>
 
-        <div class="col-12 col-md-4">
-          <h3 class="display-subsection mb-3">SIGA-ME</h3>
-          <div class="d-flex gap-3">
-            <a href="https://www.instagram.com/personal.pauloney/" class="social-icon" target="_blank"><i class="bi bi-instagram"></i></a>
+    <!-- HERO -->
+    <section
+      id="hero"
+      class="hero-section d-flex align-items-center justify-content-center"
+    >
+      <div class="hero-overlay"></div>
+      <div class="noise-overlay"></div>
+
+      <div
+        class="container position-relative text-center py-5"
+        style="z-index: 2"
+      >
+        <h1 class="display-hero mb-4">
+          SEU MELHOR FÍSICO.<br />
+          CONSTRUÍDO ONLINE.<br />
+          <span class="text-neon">90 DIAS.</span>
+        </h1>
+
+        <p class="lead-text mx-auto mb-5" style="max-width: 640px">
+          Transforme seu corpo com treinos personalizados, planos nutricionais e
+          acompanhamento semanal—tudo de qualquer lugar do mundo.
+        </p>
+
+        <div
+          class="d-flex flex-column flex-sm-row gap-3 justify-content-center mb-5"
+        >
+          <a href="#submit-forms" class="btn btn-neon btn-lg px-5"
+            >COMEÇAR AGORA</a
+          >
+          <a href="#how-it-works" class="btn btn-outline-neon btn-lg px-5"
+            >COMO FUNCIONA</a
+          >
+        </div>
+
+        <!-- Stats dinâmicas via API -->
+        <div id="stats-container" class="row justify-content-center g-4"></div>
+      </div>
+    </section>
+
+    <!-- PAIN POINTS -->
+    <section class="section-padding bg-dark-2 position-relative">
+      <div class="noise-overlay"></div>
+      <div class="container position-relative">
+        <p class="text-center label-neon mb-5">ISSO PARECE FAMILIAR?</p>
+        <div id="painpoints-container" class="row g-4"></div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section
+      id="how-it-works"
+      class="section-padding bg-dark-1 position-relative"
+    >
+      <div class="noise-overlay"></div>
+      <div class="container position-relative">
+        <div class="text-center mb-5">
+          <h2 class="display-section mb-3">COMO FUNCIONA</h2>
+          <p class="lead-text mx-auto" style="max-width: 600px">
+            Um sistema comprovado de 4 etapas para transformar seu físico em 90
+            dias
+          </p>
+        </div>
+        <div id="process-container" class="row g-5 position-relative"></div>
+      </div>
+    </section>
+
+    <!-- BEFORE & AFTER -->
+    <section id="results" class="section-padding bg-dark-3 position-relative">
+      <div class="noise-overlay"></div>
+      <div class="container position-relative">
+        <div class="text-center mb-5">
+          <h2 class="display-section mb-3">RESULTADOS REAIS</h2>
+          <p class="lead-text mx-auto" style="max-width: 600px">
+            Mais de 500 clientes transformados. Estas são apenas algumas das
+            histórias.
+          </p>
+        </div>
+        <div id="results-grid" class="row g-4"></div>
+      </div>
+    </section>
+
+    <!-- FEEDBACK -->
+    <section
+      id="community-feedback"
+      class="section-padding bg-dark-1 position-relative"
+    >
+      <div class="noise-overlay"></div>
+      <div class="container position-relative">
+        <div class="text-center mb-5">
+          <p class="label-neon mb-2">O QUE DIZEM OS ALUNOS</p>
+          <h2 class="display-section mb-3">DEPOIMENTOS</h2>
+          <p class="lead-text">
+            Resultados reais de quem viveu a transformação
+          </p>
+        </div>
+
+        <div class="row g-0">
+          <!-- COLUNA DE DEPOIMENTOS -->
+          <div class="col-12 col-lg-10 mx-auto">
+            <div class="feedback-col-header mb-4">
+              <i class="bi bi-chat-quote-fill text-neon me-2"></i>
+              <span class="label-neon">DEPOIMENTOS</span>
+            </div>
+            <!-- Grid desktop -->
+            <div
+              id="testimonials-grid"
+              class="d-flex flex-column gap-3 d-none d-md-flex"
+            ></div>
+            <!-- Carrossel mobile -->
+            <div id="testimonials-mobile" class="d-md-none"></div>
+            <!-- Depoimento em destaque -->
+            <div id="testimonial-featured"></div>
+            <!-- Empty state -->
+            <div
+              id="testimonials-empty"
+              class="text-gray-400 text-center py-4"
+              style="display: none"
+            >
+              Nenhum depoimento ainda. Seja o primeiro!
+            </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <div class="footer-bottom text-center pt-4">
-        <p class="text-gray-500 small mb-0">© 2026 PauloNey | Personal Trainer. Todos os direitos reservados.</p>
+    <!-- TRAINER INFO -->
+    <section class="section-padding bg-dark-2 position-relative">
+      <div class="noise-overlay"></div>
+      <div class="container position-relative">
+        <div class="row g-5 align-items-center">
+          <div class="col-12 col-md-6 order-2 order-md-1">
+            <div class="trainer-photo-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=80"
+                alt="Foto do personal trainer"
+                class="trainer-photo"
+              />
+              <div class="trainer-photo-gradient"></div>
+            </div>
+          </div>
+          <div
+            class="col-12 col-md-6 order-1 order-md-2"
+            id="trainer-info"
+          ></div>
+        </div>
       </div>
-    </div>
-  </footer>
+    </section>
 
-  <!-- SCRIPTS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+    <!-- PRICING -->
+    <section id="pricing" class="section-padding bg-dark-1 position-relative">
+      <div class="noise-overlay"></div>
+      <div class="container position-relative">
+        <div class="text-center mb-5">
+          <h2 class="display-section mb-3">ESCOLHA SEU PLANO</h2>
+          <p class="lead-text">
+            Compromisso mínimo de 90 dias. Cancele quando quiser depois.
+          </p>
+        </div>
 
-  <script src="js/api.js"></script>
-  <script src="js/data.js"></script>
-  <script src="js/render.js"></script>
-  <script src="js/ui.js"></script>
-  <script src="js/form.js"></script>
-</body>
+        <div id="pricing-grid" class="row g-4 mb-5"></div>
+
+        <div
+          id="trust-badges"
+          class="d-flex flex-wrap justify-content-center gap-4 gap-md-5 py-4 border-top border-white border-opacity-10"
+        ></div>
+      </div>
+    </section>
+
+    <!-- FORMS -->
+    <section
+      id="submit-forms"
+      class="section-padding bg-dark-1 position-relative"
+    >
+      <div class="noise-overlay"></div>
+      <div class="container position-relative">
+        <div class="text-center mb-5">
+          <p class="label-neon mb-2">FAÇA PARTE DA COMUNIDADE</p>
+          <h2 class="display-section mb-3">COMECE SUA TRANSFORMAÇÃO</h2>
+          <p class="lead-text mx-auto" style="max-width: 600px">
+            Garanta sua vaga na consultoria ou compartilhe seu depoimento com
+            quem já vive a transformação.
+          </p>
+        </div>
+
+        <div class="row g-4 align-items-start">
+          <!-- FORMULÁRIO GARANTIR VAGA -->
+          <div class="col-12 col-lg-6">
+            <div class="form-card h-100">
+              <div class="d-flex align-items-center gap-3 mb-4">
+                <div class="forms-icon-wrap">
+                  <i class="bi bi-send-fill text-neon"></i>
+                </div>
+                <div>
+                  <h3 class="display-subsection mb-1">GARANTA SUA VAGA</h3>
+                  <p class="text-gray-400 mb-0" style="font-size: 0.875rem">
+                    Comece sua transformação hoje
+                  </p>
+                </div>
+              </div>
+
+              <div id="success-message" class="success-box text-center d-none">
+                <div class="success-icon mx-auto mb-3">
+                  <i class="bi bi-send-fill"></i>
+                </div>
+                <h3 class="display-subsection mb-2">
+                  REDIRECIONANDO PARA O WHATSAPP!
+                </h3>
+                <p class="text-gray-300">
+                  Sua mensagem foi formatada e enviada. Aguarde meu retorno em
+                  breve!
+                </p>
+              </div>
+
+              <form id="lead-form" novalidate>
+                <div class="mb-3">
+                  <label for="inputName" class="form-label"
+                    >Nome Completo *</label
+                  >
+                  <input
+                    type="text"
+                    id="inputName"
+                    name="name"
+                    class="form-control custom-input"
+                    placeholder="João Silva"
+                    required
+                  />
+                </div>
+
+                <div class="mb-3">
+                  <label for="inputEmail" class="form-label">Email *</label>
+                  <input
+                    type="email"
+                    id="inputEmail"
+                    name="email"
+                    class="form-control custom-input"
+                    placeholder="joao@exemplo.com"
+                    required
+                  />
+                </div>
+
+                <div class="mb-3">
+                  <label for="inputWhatsapp" class="form-label"
+                    >WhatsApp *</label
+                  >
+                  <input
+                    type="tel"
+                    id="inputWhatsapp"
+                    name="whatsapp"
+                    class="form-control custom-input"
+                    placeholder="(11) 99999-9999"
+                    required
+                  />
+                </div>
+
+                <div class="mb-4">
+                  <label for="inputGoal" class="form-label"
+                    >Objetivo Principal *</label
+                  >
+                  <select
+                    id="inputGoal"
+                    name="goal"
+                    class="form-select custom-input"
+                    required
+                  >
+                    <option value="" selected disabled>
+                      Selecione seu objetivo...
+                    </option>
+                    <option value="lose-weight">Perder Peso</option>
+                    <option value="build-muscle">Ganhar Massa Muscular</option>
+                    <option value="get-lean">Definição e Tonificação</option>
+                    <option value="improve-performance">
+                      Melhorar Performance Atlética
+                    </option>
+                    <option value="general-fitness">
+                      Condicionamento Geral
+                    </option>
+                  </select>
+                </div>
+
+                <div class="form-check mb-4">
+                  <input
+                    class="form-check-input"
+                    id="newsletter"
+                    type="checkbox"
+                    name="sub"
+                  />
+                  <label class="form-check-label" for="newsletter">
+                    Aceito receber promoções, notificações e ficar por dentro
+                    das novidades!
+                  </label>
+                </div>
+
+                <button
+                  type="submit"
+                  id="submitBtn"
+                  class="btn btn-neon w-100 d-flex align-items-center justify-content-center gap-2"
+                >
+                  <span id="submitText">GARANTIR MINHA VAGA</span>
+                  <i class="bi bi-send-fill" id="submitIcon"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <!-- DIVISOR VERTICAL -->
+          <div class="col-12 d-lg-none">
+            <div class="forms-divider-h"></div>
+          </div>
+          <div class="d-none d-lg-flex col-lg-auto align-self-stretch">
+            <div class="forms-divider-v"></div>
+          </div>
+
+          <!-- FORMULÁRIO DE DEPOIMENTO -->
+          <div class="col-12 col-lg">
+            <div class="form-card h-100">
+              <div class="d-flex align-items-center gap-3 mb-4">
+                <div class="forms-icon-wrap">
+                  <i class="bi bi-chat-quote-fill text-neon"></i>
+                </div>
+                <div>
+                  <h3 class="display-subsection mb-1">DEPOIMENTO</h3>
+                  <p class="text-gray-400 mb-0" style="font-size: 0.875rem">
+                    Conte sua história de transformação
+                  </p>
+                </div>
+              </div>
+              <form id="testimonial-form" novalidate>
+                <div class="mb-3">
+                  <label for="testimonialName" class="form-label"
+                    >Seu Nome *</label
+                  >
+                  <input
+                    type="text"
+                    id="testimonialName"
+                    name="testimonialName"
+                    class="form-control custom-input"
+                    placeholder="Maria Silva"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="testimonialRole" class="form-label"
+                    >Profissão / Ocupação *</label
+                  >
+                  <input
+                    type="text"
+                    id="testimonialRole"
+                    name="testimonialRole"
+                    class="form-control custom-input"
+                    placeholder="Empresária"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="testimonialRating" class="form-label"
+                    >Avaliação *</label
+                  >
+                  <select
+                    id="testimonialRating"
+                    name="testimonialRating"
+                    class="form-select custom-input"
+                    required
+                  >
+                    <option value="" disabled selected>Selecione...</option>
+                    <option value="5">⭐⭐⭐⭐⭐ Excelente</option>
+                    <option value="4">⭐⭐⭐⭐ Muito bom</option>
+                    <option value="3">⭐⭐⭐ Bom</option>
+                    <option value="2">⭐⭐ Regular</option>
+                    <option value="1">⭐ Ruim</option>
+                  </select>
+                </div>
+                <div class="mb-4">
+                  <label for="testimonialText" class="form-label"
+                    >Seu Depoimento *</label
+                  >
+                  <textarea
+                    id="testimonialText"
+                    name="testimonialText"
+                    class="form-control custom-input"
+                    rows="4"
+                    placeholder="Conte sua experiência..."
+                    required
+                    minlength="20"
+                  ></textarea>
+                </div>
+                <button type="submit" class="btn btn-outline-neon w-100">
+                  ENVIAR DEPOIMENTO
+                </button>
+                <div
+                  id="testimonial-feedback"
+                  class="form-feedback"
+                  style="display: none"
+                ></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-padding bg-dark-2 position-relative">
+      <div class="noise-overlay"></div>
+      <div class="container position-relative" style="max-width: 800px">
+        <h2 class="display-section text-center mb-5">PERGUNTAS FREQUENTES</h2>
+        <div id="faq-list" class="d-flex flex-column gap-3"></div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer-section">
+      <div class="container">
+        <div class="row g-5 mb-5">
+          <div class="col-12 col-md-4">
+            <div class="logo-text mb-3">PAULO NEY</div>
+            <p class="text-gray-400 small">
+              Transforme seu corpo. Transforme sua vida.
+            </p>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <h3 class="display-subsection mb-3">LINKS RÁPIDOS</h3>
+            <ul class="list-unstyled footer-links">
+              <li><a href="#hero">Início</a></li>
+              <li><a href="#how-it-works">Como Funciona</a></li>
+              <li><a href="#results">Resultados</a></li>
+              <li><a href="#pricing">Planos</a></li>
+              <li><a href="#community-feedback">Depoimentos</a></li>
+            </ul>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <h3 class="display-subsection mb-3">SIGA-ME</h3>
+            <div class="d-flex gap-3">
+              <a
+                href="https://www.instagram.com/personal.pauloney/"
+                class="social-icon"
+                target="_blank"
+                ><i class="bi bi-instagram"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom text-center pt-4">
+          <p class="text-gray-500 small mb-0">
+            © 2026 PauloNey | Personal Trainer. Todos os direitos reservados.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/api.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/render.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/form.js"></script>
+  </body>
 </html>

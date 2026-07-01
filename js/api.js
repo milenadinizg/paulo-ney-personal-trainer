@@ -74,4 +74,15 @@ const Api = {
     if (!res.ok) throw new Error("Erro ao buscar resultados");
     return res.json();
   },
+
+  async subscribeToNewsletter(email, name) {
+    const res = await fetch(`http://localhost:8080/api/sub`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name: name, email: email }),
+    });
+    const body = await res.json();
+    if (!res.ok) throw new Error(body.error || "Erro ao se inscrever na newsletter");
+    return body;
+  }
 };
