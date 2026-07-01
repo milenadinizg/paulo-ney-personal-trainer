@@ -39,8 +39,6 @@ paulo-ney/
 └── README.md
 ```
 
-> **Nota:** este repositório ainda não tem um `.gitignore`. Vale a pena criar um incluindo `node_modules/` e `server/fitcoach.db`, já que esse banco é gerado automaticamente e não deveria ir para o controle de versão.
-
 ---
 
 ## Pré-requisitos
@@ -137,9 +135,6 @@ Exemplo de body para POST:
   "text": "Perdi 10kg em 3 meses. Recomendo!"
 }
 ```
-
-> **Importante:** atualmente todo depoimento enviado pelo formulário é salvo com `approved = 1` automaticamente (veja `server/index.js`), ou seja, **é publicado no site na hora, sem moderação**. Não existe fila de aprovação hoje. Se quiser revisar depoimentos antes de publicá-los, é preciso mudar esse `1` para `0` no INSERT e aprovar manualmente depois (veja seção abaixo).
-
 ### Avaliações
 
 | Método | Rota | Descrição |
@@ -147,14 +142,6 @@ Exemplo de body para POST:
 | `GET` | `/api/reviews` | Lista todas as avaliações aprovadas |
 | `GET` | `/api/reviews?plan=PRO` | Filtra por plano |
 | `POST` | `/api/reviews` | Envia uma nova avaliação (também auto-aprovada, `approved = 1`) |
-
-> Assim como depoimentos, avaliações enviadas via `POST /api/reviews` também são auto-aprovadas no código atual. Além disso, esse endpoint existe na API mas **ainda não está conectado a nenhum formulário do frontend** — é usado apenas se você quiser integrar um formulário de avaliação por plano no futuro.
-
-### Leads
-
-| Método | Rota | Descrição |
-|--------|------|-----------|
-| `POST` | `/api/leads` | Salva um lead (nome, e-mail, WhatsApp, objetivo) capturado pelo formulário principal |
 
 ### Dados do Personal
 
@@ -178,8 +165,3 @@ O banco `server/fitcoach.db` é criado automaticamente ao iniciar o servidor. As
 - **`stats`** — estatísticas exibidas no hero
 - **`results`** — resultados de antes/depois
 
-Se quiser aprovar/moderar manualmente registros (por exemplo, depois de alterar o código para não auto-aprovar), dá para usar qualquer cliente SQLite (ex.: **DB Browser for SQLite**):
-```sql
-UPDATE testimonials SET approved = 1 WHERE id = 1;
-UPDATE reviews SET approved = 1 WHERE id = 1;
-```
